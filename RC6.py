@@ -37,8 +37,8 @@ while True:
         p=int(input('Enter number of elements:'))
         for i in range(1,p+1):
             print('For Person',i)
-            l=int(input('Enter Height in metres:'))
-            w=int(input('Enter Weight in kilograms:'))
+            l=float(input('Enter Height in metres:'))
+            w=float(input('Enter Weight in kilograms:'))
             t+=(l,w,),
         bmi(t)
     elif n==3:
