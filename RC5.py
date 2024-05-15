@@ -1,7 +1,12 @@
-def g(l,u):
+def g(l,u,n):
     import random as r
-    print(r.randint(l,u))
+    c=[]
+    while len(c)<n:
+        c.append(r.randint(l,u))
+    print(c)
+    lsl(c)
 def p(l,u):
+    print('The Prime Numbers Are:')
     for i in range (l,u):
         f=0
         if i==1 or i==0:
@@ -24,20 +29,10 @@ def lsl(x):
     print('The Second Largest Number:',sl)
     print('The Largest Number:',c)
     p(sl,c)
-while True:
-    x=int(input('1,Generate random number:\n2.Prime Number Generator:\n3.Largest and Second Largest Number in a list:\n4.Exit\nEnter Choice:'))
-    if x==1:
-        l=int(input('Enter Lower Limit:'))
-        u=int(input('Enter Upper Limit:'))
-        g(l,u)
-    elif x==2:
-        l=int(input('Enter Lower Limit:'))
-        u=int(input('Enter Upper Limit:'))
-        p(l,u)
-    elif x==3:
-        x=eval(input('Enter List of Numbers:'))
-        lsl(x)
-    elif x==4:
-        break
-    
 
+print('Random Number Generation')
+l=int(input('Enter Lower Limit:'))
+u=int(input('Enter Upper Limit:'))
+n=int(input('Enter Number of Random Numbers:'))
+g(l,u,n)
+    
