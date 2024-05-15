@@ -6,11 +6,12 @@ def mulmat(x,y):
             for j in range (len(y)):
                 ct=0
                 for k in range (len(x)):
-                    ct+=x[k][i]*y[j][k]
+                    ct+=x[i][k]*y[k][j]
                 d.append(ct)
             c.append(d)   
     return (c)
 x=eval(input('Enter 1st Nested List of Numbers: '))
 y=eval(input('Enter 2nd Nested List of Numbers: '))
 print(mulmat(x,y))
+
 
