@@ -3,18 +3,23 @@ d,f={},['Seniors','Sub-Juniors','Juniors']
 def nestd(d):
     print('\nThe leading scores are')
     for i in f:
+        n=[]
         ct=d[i]['Shivaji']
         for j in d[i]:
             if d[i][j]>ct:
                 ct,h=d[i][j],j
                 cd=1
             elif d[i][j]==ct:
-                h1=j
+                n.append(j)
                 cd=2
+                
         if cd==1:
             print(i,':-',h,':',ct)
         elif cd==2:
-            print(i,':-',h,'&',h1,':',ct)
+            print(i,':-',end=' ')
+            for i in n:
+                print(i,end=', ')
+            print(':',ct)
 
 for i in f:
     c={}
