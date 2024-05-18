@@ -1,4 +1,3 @@
-#Save the number.py file in your PC and then Run this Code
 import number as n
 
 while True:
@@ -35,3 +34,5 @@ while True:
         else:
             print('There are no Special Numbers')
         print()
+    elif op==3:
+        break
