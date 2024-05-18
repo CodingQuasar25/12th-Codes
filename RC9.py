@@ -1,4 +1,4 @@
-#Before Running the Code Download the number.py file and save in your PC with the same name, then execute this code
+#Before Running the Code Download the number.py file and save in your PC with the same name
 import number as n
 
 while True:
