@@ -19,9 +19,9 @@ def p(x):
         if f==0:
             l.append(i)
     if len(l)>0:
-         print('The Prime Numbers Are:',end='')
+         print('The Prime Numbers Are: ',end='')
          for i in l:
-             print(l,end=', ')
+             print(i,end=', ')
     else:
         print('There are no Prime Numbers')
     
