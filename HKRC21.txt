@@ -1,0 +1,72 @@
+INSERT INTO DEPARTMENT VALUES ('D001','PERSONAL',4),('D002','ADMIN',10),('D003','PRODUCTION',1),('D004','SALES',3);
+
+SELECT * FROM DEPARTMENT;
++--------+------------+---------+
+| DEPTID | DEPTNAME   | FLOORNO |
++--------+------------+---------+
+| D001   | PERSONAL   |       4 |
+| D002   | ADMIN      |      10 |
+| D003   | PRODUCTION |       1 |
+| D004   | SALES      |       3 |
++--------+------------+---------+
+
+INSERT INTO EMPLOYEE VALUES (120,'ALISHA','1978-01-23','D001','MANAGER',75000),(123,'NITIN','1977-10-10','D002','AO',59000),(129,'NAVJOT','1971-07-12','D003','SUPERVISOR',40000);
+INSERT INTO EMPLOYEE VALUES (130,'JIMMY','1980-12-30','D004','SALES REP',NULL),(131,'FAIZ','1984-04-06','D001','MANAGER',65000);
+
+SELECT * FROM EMPLOYEE;
++-------+--------+------------+--------+------------+--------+
+| EMPID | NAME   | DOB        | DEPTID | DESIG      | SALARY |
++-------+--------+------------+--------+------------+--------+
+|   120 | ALISHA | 1978-01-23 | D001   | MANAGER    |  75000 |
+|   123 | NITIN  | 1977-10-10 | D002   | AO         |  59000 |
+|   129 | NAVJOT | 1971-07-12 | D003   | SUPERVISOR |  40000 |
+|   130 | JIMMY  | 1980-12-30 | D004   | SALES REP  |   NULL |
+|   131 | FAIZ   | 1984-04-06 | D001   | MANAGER    |  65000 |
++-------+--------+------------+--------+------------+--------+
+
+SELECT DEPTID,AVG(SALARY) AS AVERAGE_SALARY FROM EMPLOYEE GROUP BY DEPTID;
++--------+----------------+
+| DEPTID | AVERAGE_SALARY |
++--------+----------------+
+| D001   |     70000.0000 |
+| D002   |     59000.0000 |
+| D003   |     40000.0000 |
+| D004   |           NULL |
++--------+----------------+
+
+SELECT NAME,DEPTNAME FROM EMPLOYEE,DEPARTMENT WHERE EMPLOYEE.SALARY>50000 AND EMPLOYEE.DEPTID=DEPARTMENT.DEPTID;
++--------+----------+
+| NAME   | DEPTNAME |
++--------+----------+
+| ALISHA | PERSONAL |
+| NITIN  | ADMIN    |
+| FAIZ   | PERSONAL |
++--------+----------+
+
+SELECT NAME FROM EMPLOYEE WHERE SALARY IS NULL ORDER BY NAME;
++-------+
+| NAME  |
++-------+
+| JIMMY |
++-------+
+
+SELECT DISTINCT DEPTID FROM EMPLOYEE;
++--------+
+| DEPTID |
++--------+
+| D001   |
+| D002   |
+| D003   |
+| D004   |
++--------+
+
+SELECT MAX(SALARY),DESIG FROM EMPLOYEE GROUP BY DESIG;
++-------------+------------+
+| MAX(SALARY) | DESIG      |
++-------------+------------+
+|       75000 | MANAGER    |
+|       59000 | AO         |
+|       40000 | SUPERVISOR |
+|        NULL | SALES REP  |
++-------------+------------+
+
